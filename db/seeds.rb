@@ -19,6 +19,7 @@ Artist.destroy_all
 
 jack = User.create(first_name: 'Jack', last_name: 'Staffen', city: 'New York', country: 'USA', phone_number: '917-801-2389', username: 'jackattack', password_digest: '1111')
 eliza = User.create(first_name: 'Eliza', last_name: 'Callahan', city: 'New York', country: 'USA', phone_number: '718-5434-2343', username: 'elcal', password_digest: '2222')
+evan = User.create(first_name: 'Evan', last_name: 'Staffen', city: 'Boston', country: 'USA', phone_number: '124-456-7891')
 
 
 #Artist params:
