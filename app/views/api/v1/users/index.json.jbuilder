@@ -1,16 +1,11 @@
-json.array! @users do |user|
-    json.id user.id
-    json.first_name user.first_name
-    json.last_name user.last_name
-    json.username user.username
-    json.password_digest user.password_digest
-    json.city user.city
-    json.country user.country
-    json.phone_number user.phone_number
+json.key_format! camelize: :lower
 
-    
+
+json.array! @users do |user|
+    json.(user, :id, :first_name, :last_name, :username, :password_digest, :city, :country, :phone_number)
+    json.song_count user.votes.length
+
     if user.songs.length >= 1 
-        json.song_count user.votes.length
         json.songs user.songs
     end
     
