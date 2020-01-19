@@ -9,10 +9,9 @@
 #   destroys seeded data on reseed
 
 User.destroy_all
-Song.destroy_all
 Vote.destroy_all
 Follow.destroy_all
-Artist.destroy_all
+
 
 
 #User params:
@@ -26,23 +25,26 @@ evan = User.create(first_name: 'Evan', last_name: 'Staffen', city: 'Boston', cou
 #Artist params:
     #:name, :api_artist:id
 
-    beyonce = Artist.create(name: "Beyonce", api_artist_id: '6vWDO969PvNqNYHIOW5v0m')
-    nirvana = Artist.create(name: "Nirvana", api_artist_id: '6olE6TJLqED3rqDCT0FyPh')
+    # beyonce = Artist.create(name: "Beyonce", api_artist_id: '6vWDO969PvNqNYHIOW5v0m')
+    # nirvana = Artist.create(name: "Nirvana", api_artist_id: '6olE6TJLqED3rqDCT0FyPh')
 
 #Song params:
     # :name, :album, :artist_id, :api_song_id, :api_artist_id
 
-crazy_in_love = Song.create(name: 'Crazy In Love', artist_id: beyonce.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m')
+# crazy_in_love = Song.create(name: 'Crazy In Love', artist_id: beyonce.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m')
 
-smells_like_teen_spirit = Song.create(name: "Smells Like Teen Spirit", artist_id: nirvana.id, api_song_id: '5ghIJDpPoe3CfHMGu71E6T', api_artist_id: '6olE6TJLqED3rqDCT0FyPh')
+# smells_like_teen_spirit = Song.create(name: "Smells Like Teen Spirit", artist_id: nirvana.id, api_song_id: '5ghIJDpPoe3CfHMGu71E6T', api_artist_id: '6olE6TJLqED3rqDCT0FyPh')
 
 
 #Vote params:
     #:user_id, :song_id, :api_song_id
 
-u1s1v1 = Vote.create(user_id: jack.id, song_id: crazy_in_love.id, api_song_id: crazy_in_love.api_song_id)
-u2s1v2 = Vote.create(user_id: eliza.id, song_id: crazy_in_love.id, api_song_id: crazy_in_love.api_song_id)
+u1v1 = Vote.create(user_id: jack.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love")
+u2v2 = Vote.create(user_id: eliza.id, api_song_id: '5ghIJDpPoe3CfHMGu71E6T', api_artist_id: '6olE6TJLqED3rqDCT0FyPh', song_name: "Smells Like Teen Spirit")
 
 
+#Follow params:
+    #:user_id, :artist_id, :api_artist_id
 
+us1f1 = Follow.create(user_id: jack.id, api_artist_id: '6vWDO969PvNqNYHIOW5v0m')
 

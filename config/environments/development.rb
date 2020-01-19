@@ -7,7 +7,9 @@ Rails.application.configure do
   config.cache_classes = false
 
   #ngrok shit
-  config.hosts << "1b64719a.ngrok.io"
+  # config.hosts << "78fd0664.ngrok.io"
+
+  
 
   # Do not eager load code on boot.
   config.eager_load = false
