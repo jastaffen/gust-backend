@@ -4,6 +4,8 @@ class CreateVotes < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :song_id
       t.string :api_song_id
+      t.string :api_artist_id
+      t.string :song_name
 
       t.timestamps
     end
