@@ -39,8 +39,9 @@ evan = User.create(first_name: 'Evan', last_name: 'Staffen', city: 'Boston', cou
 #Vote params:
     #:user_id, :song_id, :api_song_id
 
-u1v1 = Vote.create(user_id: jack.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love")
+u1v1 = Vote.create(user_id: jack.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love", artist_name: 'Beyoncé', album_name: "Dangerously In Love")
 u2v2 = Vote.create(user_id: eliza.id, api_song_id: '5ghIJDpPoe3CfHMGu71E6T', api_artist_id: '6olE6TJLqED3rqDCT0FyPh', song_name: "Smells Like Teen Spirit")
+
 
 
 #Follow params:
