@@ -37,13 +37,12 @@ ActiveRecord::Schema.define(version: 2020_01_19_222039) do
 
   create_table "votes", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "song_id"
     t.string "api_song_id"
     t.string "api_artist_id"
     t.string "song_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "album_api_id"
+    t.string "api_album_id"
     t.string "album_name"
     t.string "artist_name"
   end

@@ -1,8 +1,19 @@
 class Api::V1::VotesController < ApplicationController
-    skip_before_action :authorized
+    skip_before_action :authorized, only: [:search, :show, :create, :index]
 
     def index
-        @votes = Vote.all.select { |vote| vote.user_id == current_user.id }
+        @votes = Vote.all.select { |vote| vote.user_id == User.first.id }
+        render 'api/v1/votes/index'
+    end
+
+    def show
+        @vote = Vote.find(params[:id])
+        render(
+            partial: 'api/v1/votes/show',
+            formats: [:json],
+            locale: [:en],
+            handlers: [:jbuilder]
+        )
     end
 
     def search
@@ -16,9 +27,15 @@ class Api::V1::VotesController < ApplicationController
 
     def create
         @vote = Vote.create(vote_params)
+        render(
+            partial: 'api/v1/votes/show',
+            formats: [:json],
+            locale: [:en],
+            handlers: [:jbuilder]
+        )
     end
 
-    def delete
+    def destroy
         vote = Vote.find(params[:id])
         vote.destroy!
     end
