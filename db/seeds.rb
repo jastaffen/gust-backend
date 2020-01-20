@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 #   destroys seeded data on reseed
 
 User.destroy_all
@@ -21,6 +23,14 @@ jack = User.create(first_name: 'Jack', last_name: 'Staffen', city: 'New York', c
 eliza = User.create(first_name: 'Eliza', last_name: 'Callahan', city: 'New York', country: 'USA', phone_number: '718-5434-2343', username: 'elcal', password_digest: '2222')
 evan = User.create(first_name: 'Evan', last_name: 'Staffen', city: 'Boston', country: 'USA', phone_number: '124-456-7891')
 
+# 100000.times do 
+#     User.create(
+#         first_name: Faker::Name.first_name,
+#         last_name: Faker::Name.last_name,
+#         city: Faker::Nation.capital_city,
+#         country: Faker::Address.country
+#     )
+# end
 
 #Artist params:
     #:name, :api_artist:id
@@ -40,8 +50,14 @@ evan = User.create(first_name: 'Evan', last_name: 'Staffen', city: 'Boston', cou
     #:user_id, :song_id, :api_song_id
 
 u1v1 = Vote.create(user_id: jack.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love", artist_name: 'Beyoncé', album_name: "Dangerously In Love")
+
 u2v2 = Vote.create(user_id: eliza.id, api_song_id: '5ghIJDpPoe3CfHMGu71E6T', api_artist_id: '6olE6TJLqED3rqDCT0FyPh', song_name: "Smells Like Teen Spirit")
 
+u2v3 = Vote.create(user_id: eliza.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love", artist_name: 'Beyoncé', album_name: "Dangerously In Love")
+
+# User.all.each do |user|
+#     Vote.create(user_id: user.id, api_song_id: '5IVuqXILoxVWvWEPm82Jxr', api_artist_id: '6vWDO969PvNqNYHIOW5v0m', song_name: "Crazy in Love", artist_name: 'Beyonce', album_name: "Dangerously In Love")
+# end
 
 
 #Follow params:

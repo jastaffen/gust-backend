@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :follows, :users
       post '/login', to: 'auth#create'
       get '/votes', to: 'votes#index'
+      get '/votes/:id', to: 'votes#show'
       post '/votes', to: 'votes#create'
       delete '/votes/:id', to: 'votes#destroy'
       post '/votes/search', to: 'votes#search', as: 'votes_search'
