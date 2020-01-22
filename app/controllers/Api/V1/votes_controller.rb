@@ -2,7 +2,7 @@ class Api::V1::VotesController < ApplicationController
     skip_before_action :authorized, only: [:search, :show, :create, :index]
 
     def index
-        @votes = Vote.all.select { |vote| vote.user_id == User.first.id }
+        @votes = Vote.where(user_id:current_user.id)
         render 'api/v1/votes/index'
     end
 
