@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   #ngrok shit
- config.hosts << "e4379330.ngrok.io"
+#  config.hosts << "026353b7.ngrok.io"
 
   
 

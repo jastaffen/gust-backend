@@ -1,9 +1,14 @@
 class Api::V1::VotesController < ApplicationController
-    skip_before_action :authorized, only: [:search, :show, :create, :index]
+    skip_before_action :authorized, only: [:search, :show, :create, :index, :all]
 
     def index
         @votes = Vote.where(user_id:current_user.id)
         render 'api/v1/votes/index'
+    end
+
+    def all
+        @votes = Vote.sort_vote_count_by_song_id
+        render 'api/v1/votes/all'
     end
 
     def show
