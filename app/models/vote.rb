@@ -12,5 +12,12 @@ class Vote < ApplicationRecord
         new_hash = vote_count_by_song.max_by(15) { |v| v[1] }        
         new_hash
     end
+
+    def self.votes_by_location(song_name, artist_name)
+        votes_hash = Hash.new(0)
+        all_song_votes = Vote.all.select { |vote| vote.song_name == song_name && vote.artist_name == artist_name }
+        all_song_votes.map { |vote| vote.user.city != nil && votes_hash[vote.user.city] ? votes_hash[vote.user.city] += 1 : votes_hash[vote.user.city] = 1 }
+        votes_hash
+    end
     
 end
