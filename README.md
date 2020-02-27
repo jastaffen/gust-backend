@@ -1,7 +1,5 @@
 Gust
 
-|     
-
 With Gust, users can search through a massive library of artists (from the Spotify Web API) and vote for tracks by those artists that they want to see performed live. They can also follow artists and find out about their upcoming shows.
 
 Watch the Demo: https://youtu.be/QHwTNesGLOA
