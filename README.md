@@ -1,8 +1,11 @@
 Gust
 
-|        With Gust, users can search through a massive library of artists (from the Spotify  		Web API) and vote for tracks by those artists that they want to see performed 			live. They can also follow artists and find out about their upcoming shows.
+|     
 
-Watch The Demo
+With Gust, users can search through a massive library of artists (from the Spotify Web API) and vote for tracks by those artists that they want to see performed live. They can also follow artists and find out about their upcoming shows.
+
+Watch the Demo: https://youtu.be/QHwTNesGLOA
+
 
 Retrieves artists, albums, and track data using the Spotify Web API.
 	
@@ -29,9 +32,11 @@ Technologies:
 
 META
 
-Jack Staffen - LinkedIn
+LinkedIn - https://www.linkedin.com/in/jack-n-staffen-014510184/
 
 Github Repos - 
+
 	frontend: https://github.com/jastaffen/gust-frontend-navigation
+	
 	backend: https://github.com/jastaffen/gust-backend
 
